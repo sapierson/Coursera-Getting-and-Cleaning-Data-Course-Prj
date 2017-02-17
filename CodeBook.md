@@ -135,4 +135,3 @@ The R script, run_analysis.R does the following:
 * "SITTING" (Value = "4"): The Subject was sitting during the test.
 * "STANDING" (Value = "5"): The Subject was standing during the test.
 * "LAYING" (Value = "6"): Ths Subject was laying down during the test.
-
