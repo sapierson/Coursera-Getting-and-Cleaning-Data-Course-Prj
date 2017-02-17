@@ -102,12 +102,19 @@
     
     required_features <- grep("-(mean|std)\\(\\)", features[, 2])
     
-    # tidy -mean, -std, to 'Mean' and 'Std'
-    #
     
+    # Appropriately label the features columns with descriptive variable names 
+
     features[,2] <- gsub('-mean', 'Mean', features[,2])
     features[,2] <- gsub('-std', 'Std', features[,2])
     features[,2] <- gsub('[-()]', '', features[,2])
+    
+    features[,2] <-gsub("^t", "Time", features[,2])
+    features[,2] <-gsub("^f", "Frequency", features[,2])
+    features[,2] <-gsub("Acc", "Accelerometer", features[,2])
+    features[,2] <-gsub("Gyro", "Gyroscope", features[,2])
+    features[,2] <-gsub("Mag", "Magnitude", features[,2])
+    features[,2] <-gsub("BodyBody", "Body", features[,2])
     
     x_df <- x_df[, required_features]
     y_df[, 1] <- activity_labels[y_df[, 1], 2]
